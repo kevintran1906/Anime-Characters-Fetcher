@@ -19,6 +19,10 @@ async function fetchData(){
         imgElement.src = pokemonSprite;
         imgElement.style.display = "block";
 
+        //display id
+        const pokemonId = document.getElementById("pokemonId")
+        pokemonId.textContent = `ID: ${data.id}`
+
         //display stats
         const pokemonStats = document.getElementById("pokemonStats");
         pokemonStats.innerHTML = "";
@@ -26,12 +30,36 @@ async function fetchData(){
         data.stats.forEach((stat) => {
             const statElement = document.createElement("li");
             statElement.textContent = `${stat.stat.name}: ${stat.base_stat}`;
-            pokemonStats.appendChild(statElement);
+            pokemonStats.appendChild(statElement); //this erase previous pokemon stats. Without this, the previous stats will still be displayed when you fetch a new Pokemon
+
+        });
+
+        //display abilities
+        const pokemonAbilities = document.getElementById("pokemonAbilities")
+        pokemonAbilities.innerHTML = "";
+
+        data.abilities.forEach((abilityObject) => {
+            const abilityElement = document.createElement("li");
+            abilityElement.textContent = abilityObject.ability.name;
+            pokemonAbilities.appendChild(abilityElement); //this erase previous pokemon abilities. Without this, the previous abilities will still be displayed when you fetch a new Pokemon
+
+        });
+
+        //display types
+        const pokemonTypes = document.getElementById("pokemonTypes")
+        pokemonTypes.innerHTML = ""; //this erase previous pokemon types. Without this, the previous types will still be displayed when you fetch a new Pokemon
+
+        data.types.forEach((typeObject) => {
+            const typeElement = document.createElement("li")
+            typeElement.textContent = typeObject.type.name;
+            pokemonTypes.appendChild(typeElement);
+
         });
 
     }
     catch(error){
         console.error(error);
+        alert("Pokemon not found")
 
     }
 
