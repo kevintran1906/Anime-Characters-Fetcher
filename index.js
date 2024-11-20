@@ -11,12 +11,23 @@ async function fetchData(){
         }
         
         const data = await response.json();
-        console.log(data);
+        console.log(data); //inspect element to see full pokemon details
+
+        //display image
         const pokemonSprite = data.sprites.front_default;
         const imgElement = document.getElementById("pokemonSprite");
-
         imgElement.src = pokemonSprite;
         imgElement.style.display = "block";
+
+        //display stats
+        const pokemonStats = document.getElementById("pokemonStats");
+        pokemonStats.innerHTML = "";
+
+        data.stats.forEach((stat) => {
+            const statElement = document.createElement("li");
+            statElement.textContent = `${stat.stat.name}: ${stat.base_stat}`;
+            pokemonStats.appendChild(statElement);
+        });
 
     }
     catch(error){
