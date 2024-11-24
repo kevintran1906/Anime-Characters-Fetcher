@@ -11,11 +11,20 @@
 
 <body>
 
-    <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
-    <button onclick="fetchData()">Get Pokemon</button>
+    <input type="text" id="pokemonName" id="characterName" placeholder="Enter character name">
+    <button onclick="fetchData()">Get Character</button>
 
     
     <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
+
+    <div id="characterDetails">
+        <h3 id="characterId"></h3>
+
+        <p id="characterRace"></p>
+        <p id="characterOrigin"></p>
+
+
+    </div>
 
     <div id="pokemonDetails">
         <h3 id="pokemonId"></h3>

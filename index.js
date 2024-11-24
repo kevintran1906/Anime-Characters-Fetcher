@@ -1,9 +1,10 @@
 async function fetchData(){
-
+    //POkemon
     try{
-
         const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+
+        
 
         if(!response.ok){
             throw new Error('Could not fetch resource')
@@ -25,23 +26,23 @@ async function fetchData(){
 
         //display stats
         const pokemonStats = document.getElementById("pokemonStats");
-        pokemonStats.innerHTML = "";
+        pokemonStats.innerHTML = ""; //this erase previous pokemon stats. Without this, the previous stats will still be displayed when you fetch a new Pokemon
 
         data.stats.forEach((stat) => {
             const statElement = document.createElement("li");
             statElement.textContent = `${stat.stat.name}: ${stat.base_stat}`;
-            pokemonStats.appendChild(statElement); //this erase previous pokemon stats. Without this, the previous stats will still be displayed when you fetch a new Pokemon
+            pokemonStats.appendChild(statElement); 
 
         });
 
         //display abilities
         const pokemonAbilities = document.getElementById("pokemonAbilities")
-        pokemonAbilities.innerHTML = "";
-
+        pokemonAbilities.innerHTML = ""; //this erase previous pokemon abilities. Without this, the previous abilities will still be displayed when you fetch a new Pokemon
+        
         data.abilities.forEach((abilityObject) => {
             const abilityElement = document.createElement("li");
             abilityElement.textContent = abilityObject.ability.name;
-            pokemonAbilities.appendChild(abilityElement); //this erase previous pokemon abilities. Without this, the previous abilities will still be displayed when you fetch a new Pokemon
+            pokemonAbilities.appendChild(abilityElement); 
 
         });
 
@@ -61,6 +62,13 @@ async function fetchData(){
         console.error(error);
         alert("Pokemon not found")
 
+    }
+
+
+    //Dragon Ball
+    try{
+        const characterName = document.getElemenetById("characterName").toLowerCase();
+        const response1 = await fetch('https://web.dragonball-api.com/${characterName}')
     }
 
 }
