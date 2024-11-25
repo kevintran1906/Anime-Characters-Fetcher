@@ -1,0 +1,32 @@
+/* Align Pokémon and Dragon Ball sections horizontally */
+.search-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+/* Pokémon and Dragon Ball image sizes */
+#pokemonSprite {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+
+#DBSprite {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Add spacing between details and the image */
+#pokemonDetails,
+#characterDetails {
+    margin-top: 10px;
+}

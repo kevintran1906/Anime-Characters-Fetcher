@@ -3,47 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
+    <title>Anime Fetcher</title>
     <link rel="stylesheet" href="style.css">
-
-
 </head>
-
 <body>
+    <div class="search-container">
+        <!-- Pokémon -->
+        <div class="search-box">
+            <input type="text" id="pokemonName" placeholder="Enter Pokémon name">
+            <button onclick="fetchData()">Get Pokémon</button>
 
-    <input type="text" id="pokemonName" id="characterName" placeholder="Enter character name">
-    <button onclick="fetchData()">Get Character</button>
+            <!-- Pokémon Details -->
+            <img src="" alt="Pokémon Sprite" id="pokemonSprite" style="display: none">
+            <div id="pokemonDetails">
+                <h3 id="pokemonId"></h3>
+                <ul id="pokemonStats"></ul>
 
-    
-    <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
+                <h4>Abilities:</h4>
+                <ul id="pokemonAbilities"></ul>
 
-    <div id="characterDetails">
-        <h3 id="characterId"></h3>
+                <h4>Types:</h4>
+                <ul id="pokemonTypes"></ul>
+            </div>
+        </div>
 
-        <p id="characterRace"></p>
-        <p id="characterOrigin"></p>
 
 
+        <!-- Dragon Ball -->
+        <div class="search-box">
+            <input type="text" id="characterIdInput" placeholder="Enter character ID">
+            <button onclick="fetchData()">Get Character</button>
+
+            <!-- Dragon Ball Details -->
+            <img src="" alt="Dragon Ball Sprite" id="DBSprite" style="display: none; width: 150px; height: auto;">
+            <div id="characterDetails">
+               
+            </div>
+
+            <h4>Transformations:</h4>
+            <ul id="characterTransformation"></ul>
+
+        </div>
     </div>
 
-    <div id="pokemonDetails">
-        <h3 id="pokemonId"></h3>
-        <ul id="pokemonStats"></ul>
-
-        <h4>Abilities:</h4>
-        <ul id="pokemonAbilities"></ul>
-
-
-        <h4>Types:</h4>
-        <ul id="pokemonTypes"></ul>
-
-
-    </div>
-    
     <script src="index.js"></script>
 </body>
-
-
-
-
 </html>
