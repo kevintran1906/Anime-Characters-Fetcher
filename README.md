@@ -9,3 +9,7 @@ You can type in a character's name and fetch it, which displays information abou
 ## References
 - Document: https://docs.google.com/document/d/1oBhFPYJt9jlumpoZxw-t-i-ZUwvo_q6Ad9hVmPW26cI/edit?tab=t.0
 - Tutorial: https://www.youtube.com/watch?v=37vxWr0WgQk 
+
+
+## Progress
+- For now, this will only use Dragon Ball and Pokemon resources. But we are working to add more anime resources to the website. Stay tune for updates :)
